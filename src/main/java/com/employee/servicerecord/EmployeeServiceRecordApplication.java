@@ -1,4 +1,4 @@
-package com.employee.servcie;
+package com.employee.servicerecord;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

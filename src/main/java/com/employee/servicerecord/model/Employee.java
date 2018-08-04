@@ -1,4 +1,4 @@
-package com.employee.service.model;
+package com.employee.servicerecord.model;
 
 public class Employee {
 
