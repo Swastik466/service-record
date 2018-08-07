@@ -2,19 +2,25 @@ package com.employee.servicerecord.controller;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.employee.service.model.Employee;
-import com.employee.service.model.EmployeeProfile;
+import com.employee.servicerecord.model.EmpLogin;
+import com.employee.servicerecord.model.Employee;
+import com.employee.servicerecord.model.EmployeeProfile;
+import com.employee.servicerecord.service.EmpService;
 
 @RestController
 public class EmployeeController {
 
+	@Autowired
+	private EmpService empService;
+	
 	@RequestMapping("/hello")
 	public String testMtethod() {
 		return "Hello";
@@ -28,6 +34,11 @@ public class EmployeeController {
 		emp.setUserName(userName);
 		emp.setEmpProfile(empProfile);
 		return emp;
+	}
+	
+	@RequestMapping(value = "/employee/signup", method = RequestMethod.POST)
+	public void signup(@RequestBody EmpLogin empLogin) {
+		empService.addEmployee(empLogin);
 	}
 
 	private EmployeeProfile constructSampleProfile() {
