@@ -1,0 +1,21 @@
+CREATE USER 'empseruser'@'localhost' identified by 'empseruser'; 
+
+GRANT ALL PRIVILEGES ON *.* TO 'empseruser'@'localhost';
+
+------create a new database ----------
+create database employee;
+
+
+
+---------command to login to the dbserver using the new user ----
+mysql -u empseruser -p
+
+----command to show the ports on which the new db is runnig ----
+SHOW VARIABLES WHERE Variable_name = 'port';
+
+----- command to switch to employee database -----
+
+use employee;
+
+
+
