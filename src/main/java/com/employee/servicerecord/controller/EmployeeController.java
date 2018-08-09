@@ -26,21 +26,22 @@ public class EmployeeController {
 		return "Hello";
 	}
 
-	@RequestMapping(value = "/employee/profile/{userName}", method = RequestMethod.GET)
+	@RequestMapping(value = "/employee/profile/{username}", method = RequestMethod.GET)
 	@ResponseBody
-	public Employee getProfileByUserName(@PathVariable("userName") String userName) {
-		Employee emp = new Employee();
+	public Employee getProfileByUserName(@PathVariable("username") String username) {
+		/*Employee emp = new Employee();
 		EmployeeProfile empProfile = constructSampleProfile(); // this to be retrieved from Database based on userName
 		emp.setUserName(userName);
-		emp.setEmpProfile(empProfile);
-		return emp;
+		emp.setEmpProfile(empProfile);*/
+		
+		return empService.getUserProfile(username);
 	}
 	
 	@RequestMapping(value = "/employee/signup", method = RequestMethod.POST)
 	public void signup(@RequestBody EmpLogin empLogin) {
 		empService.addEmployee(empLogin);
 	}
-
+	
 	private EmployeeProfile constructSampleProfile() {
 		EmployeeProfile empProfile = new EmployeeProfile();
 		empProfile.setName("Test Employee");
