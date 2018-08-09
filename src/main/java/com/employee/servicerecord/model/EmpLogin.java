@@ -1,35 +1,56 @@
 package com.employee.servicerecord.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class EmpLogin {
   
 	@Id
-	private String userId;
-	private String passkey;
+	@Column(name="id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long userID;
+	
+	@NotNull
+	private String username;
+
+	private String password;
 	
 	public EmpLogin() {
 		
 	}
 	
-	public EmpLogin(String userName, String password) {
+	public EmpLogin(String username, String password) {
 		super();
-		this.userId = userName;
-		this.passkey = password;
+		this.username = username;
+		this.password = password;
 	}
-	
-	public String getUserName() {
-		return userId;
+
+	public long getUserID() {
+		return userID;
 	}
-	public void setUserName(String userName) {
-		this.userId = userName;
+
+	public void setUserID(long userID) {
+		this.userID = userID;
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public String getPassword() {
-		return passkey;
+		return password;
 	}
+
 	public void setPassword(String password) {
-		this.passkey = password;
+		this.password = password;
 	}
 }
