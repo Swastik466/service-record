@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.employee.servicerecord.dao.EmpRepository;
 import com.employee.servicerecord.model.EmpLogin;
+import com.employee.servicerecord.model.Employee;
 
 @Service
 public class EmpService {
@@ -22,4 +23,11 @@ public class EmpService {
 	  }
 	  
   }
+
+public Employee getUserProfile(String username) {
+	// TODO Auto-generated method stub
+	Employee employee = new Employee();
+	
+	return null;
+}
 }
