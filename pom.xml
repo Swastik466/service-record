@@ -7,7 +7,7 @@
 	<groupId>com.employee.servcie.record</groupId>
 	<artifactId>employee-service-record</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>employee-service-record</name>
 	<description>Online employee service record</description>
